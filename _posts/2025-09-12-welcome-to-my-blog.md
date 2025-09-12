@@ -2,8 +2,12 @@
 layout: single
 title: "欢迎来到我的技术博客"
 date: 2025-09-12 10:00:00 +0800
-categories: [tech]
-tags: [博客, Jekyll, GitHub Pages]
+categories: 
+  - tech
+tags: 
+  - 博客
+  - Jekyll
+  - GitHub Pages
 author_profile: true
 toc: true
 toc_label: "目录"
