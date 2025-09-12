@@ -1,0 +1,42 @@
+<!-- 评论表单模板 -->
+<section id="comment-section">
+  <h3>💬 发表评论</h3>
+  
+  <form id="comment-form" action="https://api.staticman.net/v2/entry/UNBAILANLINCH/UNBAILANLINCH.github.io/master/comments" method="post">
+    <!-- 隐藏字段 -->
+    <input name="options[redirect]" type="hidden" value="{{ page.url | absolute_url }}#comment-submitted">
+    <input name="options[slug]" type="hidden" value="{{ page.slug }}">
+    
+    <!-- 用户输入字段 -->
+    <div class="form-group">
+      <label for="comment-name">姓名 <span class="required">*</span></label>
+      <input type="text" id="comment-name" name="fields[name]" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="comment-email">邮箱 <span class="required">*</span></label>
+      <input type="email" id="comment-email" name="fields[email]" required>
+      <small>邮箱不会公开显示</small>
+    </div>
+    
+    <div class="form-group">
+      <label for="comment-url">网站（可选）</label>
+      <input type="url" id="comment-url" name="fields[url]">
+    </div>
+    
+    <div class="form-group">
+      <label for="comment-message">评论内容 <span class="required">*</span></label>
+      <textarea id="comment-message" name="fields[message]" rows="5" required></textarea>
+    </div>
+    
+    <!-- reCAPTCHA -->
+    <div class="form-group">
+      <div class="g-recaptcha" data-sitekey="6LdRBykTAAAAAFB46MnIu6ixuxwu9W1ihFF8G60Q"></div>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">提交评论</button>
+  </form>
+</section>
+
+<!-- reCAPTCHA 脚本 -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
