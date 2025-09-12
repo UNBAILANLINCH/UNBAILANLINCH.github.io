@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "关于个人网站搭建的思考"
-date: 2025-09-12
+date: 2025-09-12 11:00:00 +0800
 categories: [life]
 tags: [思考, 成长, 2025]
 author_profile: true
