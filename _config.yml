@@ -59,9 +59,9 @@ comments:
     theme                : # "github-light" (default), "github-dark"
     issue_term           : # "pathname" (default)
   giscus:
-    repo_id              : "R_kgDON-9eCA" # 你的仓库 ID
+    repo_id              : "R_kgDOOYbVuw" # 你的仓库 ID
     category_name        : "Announcements" # 使用 Announcements 分类
-    category_id          : "DIC_kwDON-9eCM4Cl4gS" # 分类 ID
+    category_id          : "DIC_kwDOOYbVu84Cvij9" # 分类 ID
     discussion_term      : "pathname" # "pathname" (default), "url", "title", "og:title"
     reactions_enabled    : '1' # '1' for enabled (default), '0' for disabled
     theme                : "preferred_color_scheme" # "light" (default), "dark", "dark_dimmed", "transparent_dark", "preferred_color_scheme"
