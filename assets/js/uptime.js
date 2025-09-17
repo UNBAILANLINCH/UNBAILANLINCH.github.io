@@ -1,8 +1,8 @@
 // 网站运营时间计算
 (function() {
-  // 网站开始运营的日期 - 根据你的需要修改这个日期
-  // 这里设置为2024年9月1日，你可以改为实际开始的日期
-  const startDate = new Date('2024-09-01T00:00:00'); 
+  // 网站开始运营的日期 - 基于Git第一次提交时间
+  // 2025年4月12日 - UNBAILANLINCH的第一次提交：Create jekyll.yml
+  const startDate = new Date('2025-04-12T22:15:54+08:00'); 
   
   function updateUptime() {
     const now = new Date();
