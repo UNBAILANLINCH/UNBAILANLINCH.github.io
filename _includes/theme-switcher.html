@@ -1,0 +1,40 @@
+<!-- 主题切换器样式 -->
+<link rel="stylesheet" href="{{ '/assets/css/theme-switcher.css' | relative_url }}">
+
+<!-- 主题切换器脚本 -->
+<script src="{{ '/assets/js/theme-switcher.js' | relative_url }}"></script>
+
+<!-- Giscus主题同步脚本 -->
+<script>
+// 确保Giscus在加载时使用正确的主题
+document.addEventListener('DOMContentLoaded', function() {
+  // 监听Giscus iframe加载完成
+  function waitForGiscus() {
+    const giscusFrame = document.querySelector('iframe[src*="giscus"]');
+    if (giscusFrame && window.themeSwitcher) {
+      // 设置初始主题
+      const currentTheme = window.themeSwitcher.currentTheme || 'light';
+      window.themeSwitcher.updateGiscusTheme(currentTheme);
+    } else {
+      // 如果Giscus还没加载，等待一会再检查
+      setTimeout(waitForGiscus, 500);
+    }
+  }
+  
+  // 延迟检查Giscus是否已加载
+  setTimeout(waitForGiscus, 1000);
+});
+
+// 自定义Giscus配置，使用动态主题
+window.addEventListener('message', function(event) {
+  if (event.origin !== 'https://giscus.app') return;
+  
+  // 监听Giscus准备就绪的消息
+  if (event.data.giscus && event.data.giscus.discussion) {
+    // Giscus已加载，同步主题
+    if (window.themeSwitcher) {
+      window.themeSwitcher.updateGiscusTheme(window.themeSwitcher.currentTheme);
+    }
+  }
+});
+</script>
