@@ -1,6 +1,17 @@
 # Welcome to Jekyll!
 #
-# This config file is meant for settings that affect your entire site, values
+# This config file is me  giscus:
+    repo_id              : "R_kgDON-9eCA" # 通过 https://giscus.app/zh-CN 获取
+    category_name        : "General" # 使用通用分类
+    category_id          : "DIC_kwDON-9eCM4Cl4gS" # 通过 https://giscus.app/zh-CN 获取
+    discussion_term      : "pathname"
+    reactions_enabled    : '1'
+    theme                : "light"
+    strict               : 0
+    input_position       : "bottom"
+    emit_metadata        : 0
+    lang                 : "zh-CN"
+    lazy                 : trueings that affect your entire site, values
 # which you are expected to set up once and rarely need to edit after that.
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # `jekyll serve`. If you change this file, please restart the server process.
@@ -34,7 +45,7 @@ enable_copy_code_button  : # true, false (default)
 copyright                : # "copyright" name, defaults to site.title
 copyright_url            : # "copyright" URL, defaults to site.url
 comments:
-  provider               : "staticman_v2" # 启用 Staticman v2 评论系统
+  provider               : "giscus" # 改为 giscus 评论系统（更可靠）
   disqus:
     shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
@@ -48,9 +59,9 @@ comments:
     theme                : # "github-light" (default), "github-dark"
     issue_term           : # "pathname" (default)
   giscus:
-    repo_id              : # 需要从 https://giscus.app 获取
-    category_name        : "General" # 或者你创建的其他分类名
-    category_id          : # 需要从 https://giscus.app 获取
+    repo_id              : "R_kgDON-9eCA" # 你的仓库 ID
+    category_name        : "Announcements" # 使用 Announcements 分类
+    category_id          : "DIC_kwDON-9eCM4Cl4gS" # 分类 ID
     discussion_term      : "pathname" # "pathname" (default), "url", "title", "og:title"
     reactions_enabled    : '1' # '1' for enabled (default), '0' for disabled
     theme                : "preferred_color_scheme" # "light" (default), "dark", "dark_dimmed", "transparent_dark", "preferred_color_scheme"
@@ -69,12 +80,7 @@ staticman:
 reCaptcha:
   siteKey                : "6LdRBykTAAAAAFB46MnIu6ixuxwu9W1ihFF8G60Q"
   secret                 : "PznnZGu3P6eTHRPLORniSq+J61YEf+A9zmColXDM5icqF49gbunH51B8+h+i2IvewpuxtA9TFoK68TuhUp/X3YKmmqhXasegHYabY50fqF9nJh9npWNhvITdkQHeaOqnFXUIwxfiEeUt49Yoa2waRR7a5LdRAP3SVM8hz0KIBT4="
-  staticman:
-    branch               : # "master"
-    endpoint             : # "https://{your Staticman v3 API}/v3/entry/github/"
-reCaptcha:
-  siteKey                :
-  secret                 :
+
 atom_feed:
   path                   : # blank (default) uses feed.xml
   hide                   : # true, false (default)
