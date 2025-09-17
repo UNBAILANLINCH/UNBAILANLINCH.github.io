@@ -290,3 +290,66 @@
 [data-theme="light"] {
   --focus-color: #0969da;
 }
+
+/* 目录（TOC）深色主题样式 */
+[data-theme="dark"] .toc {
+  background-color: #161b22 !important;
+  border: 1px solid #30363d !important;
+  color: #f0f6fc !important;
+}
+
+[data-theme="dark"] .toc .nav__title {
+  background-color: #21262d !important;
+  color: #f0f6fc !important;
+}
+
+[data-theme="dark"] .toc__menu a {
+  color: #8b949e !important;
+  border-bottom: 1px solid #30363d !important;
+}
+
+[data-theme="dark"] .toc__menu a:hover {
+  color: #f0f6fc !important;
+  background-color: #21262d !important;
+}
+
+[data-theme="dark"] .toc .active a {
+  color: #58a6ff !important;
+  background-color: #1f2937 !important;
+}
+
+/* 侧边栏深色主题样式 */
+[data-theme="dark"] .sidebar__right {
+  background-color: transparent !important;
+}
+
+[data-theme="dark"] .sidebar__right .sticky {
+  background-color: transparent !important;
+}
+
+/* 分享按钮深色主题样式 */
+[data-theme="dark"] .page__share {
+  background-color: #161b22 !important;
+  border: 1px solid #30363d !important;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+[data-theme="dark"] .page__share-title {
+  color: #f0f6fc !important;
+}
+
+[data-theme="dark"] .btn--twitter {
+  background-color: #1da1f2 !important;
+  border-color: #1da1f2 !important;
+}
+
+[data-theme="dark"] .btn--facebook {
+  background-color: #1877f2 !important;
+  border-color: #1877f2 !important;
+}
+
+[data-theme="dark"] .btn--linkedin {
+  background-color: #0077b5 !important;
+  border-color: #0077b5 !important;
+}
