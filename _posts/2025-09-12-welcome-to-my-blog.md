@@ -12,6 +12,7 @@ author_profile: true
 toc: true
 toc_label: "目录"
 toc_icon: "cog"
+comments: true
 ---
 
 ##  欢迎

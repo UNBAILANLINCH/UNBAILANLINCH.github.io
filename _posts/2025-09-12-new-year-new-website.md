@@ -11,6 +11,7 @@ author_profile: true
 toc: true
 toc_label: "目录"
 toc_icon: "heart"
+comments: true
 ---
 
 ## 个人网站的起源想法
