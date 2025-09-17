@@ -13,6 +13,8 @@ toc: true
 toc_label: "目录"
 toc_icon: "cog"
 comments: true
+header:
+  teaser: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
 ---
 
 ##  欢迎

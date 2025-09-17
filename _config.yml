@@ -327,6 +327,7 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
+      show_date: true
       comments: true  # 启用评论功能
       share: true
       related: true

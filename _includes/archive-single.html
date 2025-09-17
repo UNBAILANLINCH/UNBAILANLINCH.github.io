@@ -12,19 +12,56 @@
 
 <div class="{{ include.type | default: 'list' }}__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork"{% if post.locale %} lang="{{ post.locale }}"{% endif %}>
-    {% if include.type == "grid" and teaser %}
+    
+    <!-- 添加封面图显示 -->
+    {% if teaser %}
       <div class="archive__item-teaser">
-        <img src="{{ teaser | relative_url }}" alt="">
+        <a href="{{ post.url | relative_url }}" rel="permalink">
+          <img src="{{ teaser | relative_url }}" alt="{{ title }}" class="archive__item-image">
+        </a>
       </div>
     {% endif %}
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {% else %}
-        <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
+    
+    <!-- 改进的内容区域 -->
+    <div class="archive__item-body">
+      <h2 class="archive__item-title no_toc" itemprop="headline">
+        {% if post.link %}
+          <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+        {% else %}
+          <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
+        {% endif %}
+      </h2>
+      
+      <!-- 发布时间和阅读时间 -->
+      <div class="archive__item-meta">
+        {% if post.date %}
+          <span class="archive__item-date">
+            <i class="far fa-calendar-alt" aria-hidden="true"></i>
+            {% assign date_format = "%Y-%m-%d" %}
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: date_format }}</time>
+          </span>
+        {% endif %}
+        
+        {% if post.read_time %}
+          {% assign words_per_minute = post.words_per_minute | default: site.words_per_minute | default: 200 %}
+          {% assign words = post.content | strip_html | number_of_words %}
+          <span class="archive__item-readtime">
+            <i class="far fa-clock" aria-hidden="true"></i>
+            {% if words < words_per_minute %}
+              少于 1 分钟阅读
+            {% elsif words == words_per_minute %}
+              1 分钟阅读
+            {% else %}
+              {{ words | divided_by: words_per_minute }} 分钟阅读
+            {% endif %}
+          </span>
+        {% endif %}
+      </div>
+      
+      <!-- 文章摘要 -->
+      {% if post.excerpt %}
+        <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 120 }}</p>
       {% endif %}
-    </h2>
-    {% include page__meta.html type=include.type %}
-    {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
+    </div>
   </article>
 </div>

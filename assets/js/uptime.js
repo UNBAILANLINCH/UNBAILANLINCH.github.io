@@ -8,12 +8,13 @@
     const now = new Date();
     const diff = now - startDate;
     
-    // 计算年、月、天、小时、分钟
+    // 计算年、月、天、小时、分钟、秒
     const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
     const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
     const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
     
     // 生成显示文本
     let uptimeText = '';
@@ -29,7 +30,7 @@
     if (hours > 0) {
       uptimeText += `${hours} 小时 `;
     }
-    uptimeText += `${minutes} 分钟`;
+    uptimeText += `${minutes} 分 ${seconds.toString().padStart(2, '0')} 秒`;
     
     // 更新页面显示
     const uptimeElement = document.getElementById('site-uptime');
@@ -47,4 +48,7 @@
   
   // 每分钟更新一次
   setInterval(updateUptime, 60000);
+  
+  // 每秒更新一次，让秒数动起来
+  setInterval(updateUptime, 1000);
 })();
