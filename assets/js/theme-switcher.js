@@ -27,8 +27,20 @@ class ThemeSwitcher {
   // 初始化主题切换器
   init() {
     this.applyTheme(this.currentTheme);
-    this.createSwitchButton();
+    this.initializeButton();
     this.bindEvents();
+  }
+
+  // 初始化已存在的按钮
+  initializeButton() {
+    const button = document.getElementById('theme-toggle');
+    if (button) {
+      console.log('Theme toggle button found in masthead');
+      this.updateButtonState(this.currentTheme);
+    } else {
+      console.log('Theme toggle button not found, creating fallback');
+      this.createSwitchButton();
+    }
   }
 
   // 应用主题
@@ -158,12 +170,12 @@ class ThemeSwitcher {
 
 // 等待DOM加载完成后初始化
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('DOM loaded, initializing theme switcher...');
+  console.log('DOM loaded, initializing theme switcher... - theme-switcher.js:161');
   
   // 延迟初始化，确保所有元素都加载完成
   setTimeout(() => {
     window.themeSwitcher = new ThemeSwitcher();
-    console.log('Theme switcher initialized');
+    console.log('Theme switcher initialized - theme-switcher.js:166');
   }, 100);
 });
 
@@ -172,10 +184,10 @@ if (document.readyState === 'loading') {
   // DOM还在加载中，等待DOMContentLoaded
 } else {
   // DOM已经加载完成
-  console.log('DOM already loaded, initializing theme switcher immediately...');
+  console.log('DOM already loaded, initializing theme switcher immediately... - theme-switcher.js:175');
   setTimeout(() => {
     window.themeSwitcher = new ThemeSwitcher();
-    console.log('Theme switcher initialized immediately');
+    console.log('Theme switcher initialized immediately - theme-switcher.js:178');
   }, 100);
 }
 
