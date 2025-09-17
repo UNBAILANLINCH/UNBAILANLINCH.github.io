@@ -69,11 +69,25 @@ class ThemeSwitcher {
       </span>
     `;
 
-    // 添加到导航栏
-    const masthead = document.querySelector('.masthead__inner-wrap');
+    // 尝试多种方式添加到导航栏
+    const masthead = document.querySelector('.masthead__inner-wrap') || 
+                   document.querySelector('.greedy-nav') || 
+                   document.querySelector('.masthead') ||
+                   document.querySelector('header') ||
+                   document.body;
+    
     if (masthead) {
+      // 如果是body，创建固定位置的按钮
+      if (masthead === document.body) {
+        button.style.position = 'fixed';
+        button.style.top = '20px';
+        button.style.right = '20px';
+        button.style.zIndex = '9999';
+      }
       masthead.appendChild(button);
     }
+    
+    console.log('Theme toggle button created and added to: - theme-switcher.js:90', masthead.className || masthead.tagName);
   }
 
   // 更新按钮状态
@@ -144,8 +158,26 @@ class ThemeSwitcher {
 
 // 等待DOM加载完成后初始化
 document.addEventListener('DOMContentLoaded', () => {
-  window.themeSwitcher = new ThemeSwitcher();
+  console.log('DOM loaded, initializing theme switcher...');
+  
+  // 延迟初始化，确保所有元素都加载完成
+  setTimeout(() => {
+    window.themeSwitcher = new ThemeSwitcher();
+    console.log('Theme switcher initialized');
+  }, 100);
 });
+
+// 如果DOM已经加载完成，立即初始化
+if (document.readyState === 'loading') {
+  // DOM还在加载中，等待DOMContentLoaded
+} else {
+  // DOM已经加载完成
+  console.log('DOM already loaded, initializing theme switcher immediately...');
+  setTimeout(() => {
+    window.themeSwitcher = new ThemeSwitcher();
+    console.log('Theme switcher initialized immediately');
+  }, 100);
+}
 
 // 为Giscus提供主题同步函数
 window.getGiscusTheme = function() {

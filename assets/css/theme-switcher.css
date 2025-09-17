@@ -14,6 +14,16 @@
   margin-left: 16px;
   min-width: 80px;
   justify-content: center;
+  font-family: inherit;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 固定位置样式（备用方案） */
+.theme-toggle-btn[style*="position: fixed"] {
+  background: var(--background-color, #fff);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border-radius: 25px;
+  padding: 10px 15px;
 }
 
 .theme-toggle-btn:hover {
