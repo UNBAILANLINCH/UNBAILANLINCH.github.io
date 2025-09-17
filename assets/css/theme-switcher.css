@@ -179,38 +179,96 @@
 
 /* 深色主题下的整体样式调整 */
 [data-theme="dark"] body {
-  background-color: #0d1117;
-  color: #f0f6fc;
+  background-color: #0d1117 !important;
+  color: #f0f6fc !important;
 }
 
 [data-theme="dark"] .masthead {
-  background-color: #161b22;
-  border-bottom-color: #30363d;
+  background-color: #161b22 !important;
+  border-bottom-color: #30363d !important;
 }
 
 [data-theme="dark"] .greedy-nav {
-  background-color: #161b22;
+  background-color: #161b22 !important;
 }
 
 [data-theme="dark"] .greedy-nav a {
-  color: #f0f6fc;
+  color: #f0f6fc !important;
 }
 
 [data-theme="dark"] .greedy-nav a:hover {
-  color: #58a6ff;
+  color: #58a6ff !important;
 }
 
 [data-theme="dark"] .page__content {
-  background-color: #0d1117;
+  background-color: #0d1117 !important;
+  color: #f0f6fc !important;
 }
 
 [data-theme="dark"] .sidebar {
-  background-color: #161b22;
+  background-color: #161b22 !important;
 }
 
 [data-theme="dark"] .archive__item {
-  background-color: #161b22;
-  border: 1px solid #30363d;
+  background-color: #161b22 !important;
+  border: 1px solid #30363d !important;
+}
+
+/* 修复页面容器和布局 */
+[data-theme="dark"] .initial-content {
+  background-color: #0d1117 !important;
+}
+
+[data-theme="dark"] .page {
+  background-color: #0d1117 !important;
+  color: #f0f6fc !important;
+}
+
+[data-theme="dark"] .page__footer {
+  background-color: #0d1117 !important;
+  color: #f0f6fc !important;
+  border-top: 1px solid #30363d !important;
+}
+
+[data-theme="dark"] .page__footer footer {
+  background-color: #0d1117 !important;
+}
+
+/* 修复导航栏和内容之间的间隙 */
+[data-theme="dark"] .layout--home .masthead,
+[data-theme="dark"] .layout--single .masthead,
+[data-theme="dark"] .layout--archive .masthead {
+  margin-bottom: 0 !important;
+}
+
+[data-theme="dark"] .layout--home .initial-content,
+[data-theme="dark"] .layout--single .initial-content,
+[data-theme="dark"] .layout--archive .initial-content {
+  padding-top: 0 !important;
+}
+
+/* 确保所有主要容器都有深色背景 */
+[data-theme="dark"] #main {
+  background-color: #0d1117 !important;
+}
+
+[data-theme="dark"] .page__inner-wrap {
+  background-color: #0d1117 !important;
+}
+
+[data-theme="dark"] .page__content h1,
+[data-theme="dark"] .page__content h2,
+[data-theme="dark"] .page__content h3,
+[data-theme="dark"] .page__content h4,
+[data-theme="dark"] .page__content h5,
+[data-theme="dark"] .page__content h6 {
+  color: #f0f6fc !important;
+}
+
+[data-theme="dark"] .page__content p,
+[data-theme="dark"] .page__content li,
+[data-theme="dark"] .page__content span {
+  color: #f0f6fc !important;
 }
 
 /* 浅色主题保持原有样式 */
