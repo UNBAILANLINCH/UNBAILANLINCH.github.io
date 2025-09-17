@@ -353,3 +353,48 @@
   background-color: #0077b5 !important;
   border-color: #0077b5 !important;
 }
+
+/* 网站运营时间样式 */
+.page__footer-uptime {
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: var(--uptime-bg, #f8f9fa);
+  border: 1px solid var(--uptime-border, #e1e5e9);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.uptime-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--uptime-text, #3d4144);
+}
+
+.uptime-info i {
+  color: var(--uptime-icon, #28a745);
+}
+
+#site-uptime {
+  font-weight: bold;
+  color: var(--uptime-value, #007bff);
+}
+
+/* 深色主题下的运营时间样式 */
+[data-theme="dark"] {
+  --uptime-bg: #161b22;
+  --uptime-border: #30363d;
+  --uptime-text: #f0f6fc;
+  --uptime-icon: #3fb950;
+  --uptime-value: #58a6ff;
+}
+
+/* 浅色主题下的运营时间样式 */
+[data-theme="light"] {
+  --uptime-bg: #f8f9fa;
+  --uptime-border: #e1e5e9;
+  --uptime-text: #3d4144;
+  --uptime-icon: #28a745;
+  --uptime-value: #007bff;
+}
