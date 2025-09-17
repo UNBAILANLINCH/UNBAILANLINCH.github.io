@@ -1,17 +1,6 @@
 # Welcome to Jekyll!
 #
-# This config file is me  giscus:
-    repo_id              : "R_kgDOOYbVuw" # 你的真实仓库 ID
-    category_name        : "General" # 使用 General 分类
-    category_id          : "DIC_kwDOOYbVu84Cvij9" # 你的真实分类 ID
-    discussion_term      : "pathname"
-    reactions_enabled    : '1'
-    theme                : "preferred_color_scheme"
-    strict               : 0
-    input_position       : "bottom"
-    emit_metadata        : 0
-    lang                 : "zh-CN"
-    lazy                 : trueings that affect your entire site, values
+# This config file is meant for settings that affect your entire site, values
 # which you are expected to set up once and rarely need to edit after that.
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # `jekyll serve`. If you change this file, please restart the server process.
